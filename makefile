@@ -5,6 +5,7 @@ LIB     = ctest.so
 CC      = gcc
 SRCDIR  = src
 BINDIR  = build
+DISTDIR = dist
 SRCFMT  = c
 
 # Files to compile
@@ -19,13 +20,16 @@ INCLUDE = -Iinclude -I /usr/include
 CFLAGS  = -Wall -lm -c $(DEBUG) $(INCLUDE)
 
 # Compilation
-all: $(LIB)
+all: $(BINDIR) $(DISTDIR) $(LIB)
 
 $(LIB): $(OUT)
-	$(CC) $^ -shared -o dist/$@
+	$(CC) $^ -shared -o $(DISTDIR)/$@
 
 $(BINDIR)/%.o: $(SRCDIR)/%.$(SRCFMT)
 	$(CC) -c -fPIC $(CFLAGS) $< -o $@
+
+$(BINDIR) $(DISTDIR):
+	mkdir -p $@
 
 clean:
 	rm dist/*
