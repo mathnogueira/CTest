@@ -20,25 +20,25 @@ In order to make CTest to work, you got to have the tests main entry and other f
 Let's call it as **test_main.c** and it is inside the directory **myapp/tests**.
 
 ```c
-    // test_main.c
-    #include <ctest/core.h>
-    // You can include functions that are implemented elsewhere
-    // and add them to the test suite.
-    #include <myapp/tests/mytest.h>
-    
-    int main(int argc, const char* argv[]) {
-        // Create a test suite
-        struct CTest_TestSuite* suite = CTest_Init();
-        // Define the output mode (v1.0.0 only supports TEXT yet)
-        CTest_SetMode(suite, TEXT);
-        // Add a test to the suit.
-        // myTest is a function that is inside myapp/tests/mytest.h
-        CTest_Add(myTest, suite);
-        // Run all the tests
-        CTest_TestSuite_Run(suite);
-        // End of the main entry function.
-        return 0;
-    }
+// test_main.c
+#include <ctest/core.h>
+// You can include functions that are implemented elsewhere
+// and add them to the test suite.
+#include <myapp/tests/mytest.h>
+
+int main(int argc, const char* argv[]) {
+    // Create a test suite
+    struct CTest_TestSuite* suite = CTest_Init();
+    // Define the output mode (v1.0.0 only supports TEXT yet)
+    CTest_SetMode(suite, TEXT);
+    // Add a test to the suit.
+    // myTest is a function that is inside myapp/tests/mytest.h
+    CTest_Add(myTest, suite);
+    // Run all the tests
+    CTest_TestSuite_Run(suite);
+    // End of the main entry function.
+    return 0;
+}
  ```
 
 Now, lets say we have a file called **mytest.h** in the same directory as **test_main.c**
