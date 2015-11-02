@@ -1,7 +1,7 @@
 #CTest :: Unit Testing for C
 ### v1.0.1
 
-CTest is a tool to automatize unit tests in applications that are built in C. It is easy to setup and to use. See some examples bellow.
+CTest is a tool to automatize unit tests in applications that are built in C. It is easy to setup and to use. All the steps to install and use are described bellow.
 
 ## Installation
 To start using CTest, you must clone it from this repository and compile it.
@@ -66,7 +66,7 @@ void myTest(struct CTest_Test* test) {
     else
         // Test went ok.
         CTest_Test_Success(test);
-    }
+}
 ```
 This test will output:
 ```
