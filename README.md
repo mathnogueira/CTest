@@ -1,5 +1,5 @@
-#Test - 1.0.0                                                                                               
-##Unit Testing for C
+#CTest :: Unit Testing for C
+### v1.0.0
 
 CTest is a tool to automatize unit tests in applications that are built in C. It is easy to setup and to use. See some examples bellow.
 
