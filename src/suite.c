@@ -28,7 +28,6 @@ void CTest_TestSuite_Run(struct CTest_TestSuite* testSuite) {
             // Test has failed
             testSuite->numberFailTests += 1;
             CTest_Queue_Add(testSuite->errors, (void*) test->errMsg);
-            printf("Deu ruim!");
         }
     }
     // Print results

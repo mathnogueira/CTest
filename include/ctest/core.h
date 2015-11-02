@@ -13,6 +13,9 @@
 #include <ctest/test.h>
 #include <stdlib.h>
 
+// Version of the library
+#define VERSION "1.0.0"
+
 /**
  * List of modes available in the current version.
  */
