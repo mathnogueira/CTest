@@ -33,6 +33,7 @@ int main(int argc, const char* argv[]) {
     CTest_SetMode(suite, TEXT);
     // Add a test to the suit.
     // myTest is a function that is inside myapp/tests/mytest.h
+    // You may add many functions you like.
     CTest_Add(myTest, suite);
     // Run all the tests
     CTest_TestSuite_Run(suite);
