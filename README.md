@@ -1,5 +1,5 @@
 #CTest :: Unit Testing for C
-### v1.0.0
+### v1.0.1
 
 CTest is a tool to automatize unit tests in applications that are built in C. It is easy to setup and to use. See some examples bellow.
 
@@ -33,8 +33,9 @@ int main(int argc, const char* argv[]) {
     CTest_SetMode(suite, TEXT);
     // Add a test to the suit.
     // myTest is a function that is inside myapp/tests/mytest.h
+    // The third parameter is the name of the function (it will be printed in the output)
     // You may add many functions you like.
-    CTest_Add(myTest, suite);
+    CTest_Add(suite, myTest, "myTest");
     // Run all the tests
     CTest_TestSuite_Run(suite);
     // End of the main entry function.
@@ -69,8 +70,8 @@ void myTest(struct CTest_Test* test) {
 ```
 This test will output:
 ```
-Test v1.0.0 -- Unit Test for C
+Test v1.0.1 -- Unit Test for C
 
 Number of tests: 1      Number of failed tests: 1
->> The meaning of life should be 42
+>> myTest --> The meaning of life should be 42
 ```
