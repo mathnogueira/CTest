@@ -34,7 +34,7 @@ int main(int argc, const char* argv[]) {
     // Add a test to the suit.
     // myTest is a function that is inside myapp/tests/mytest.h
     // The third parameter is the name of the function (it will be printed in the output)
-    // You may add many functions you like.
+    // You may add as many functions you like.
     CTest_Add(suite, myTest, "myTest");
     // Run all the tests
     CTest_TestSuite_Run(suite);
