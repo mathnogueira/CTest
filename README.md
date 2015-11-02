@@ -11,7 +11,7 @@ To start using CTest, you must clone it from this repository and compile it.
 > 
 > $ make
 
-If everything works properly, you must should a new folder called **dist** inside the CTest directory. This is the shared object that you must link in your application in order to use CTest to test your code. PS: Do not forget to add the folder **include** in the include_path of your compiler.
+If everything works properly, you should have a new folder called **dist** inside the CTest directory. This is the shared object that you must link in your application in order to use CTest to test your code. PS: Do not forget to add the folder **include** in the include_path of your compiler.
 
 ## How to use
 
