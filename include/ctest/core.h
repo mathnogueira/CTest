@@ -20,7 +20,7 @@
  * List of modes available in the current version.
  */
 enum CTest_Mode {
-    TEXT,
+    TEXT,           ///< Prints the result on the terminal.
 };
 
 /**

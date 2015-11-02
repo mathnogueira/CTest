@@ -26,8 +26,8 @@ struct CTest_TestSuite {
     unsigned int numberFinishedTests; ///< Number of tests that ran.
     unsigned int numberFailTests; ///< Number of tests that have fail.
     struct CTest_FQueue* testsQueue; ///< Queue of tests to be asserted.
-    struct CTest_Queue* errors;
-    CTest_OutputFn output;
+    struct CTest_Queue* errors;     ///< Queue of results of tests that have failed.
+    CTest_OutputFn output;          ///< Pointer to the function that will print the output.
 };
 
 /**
