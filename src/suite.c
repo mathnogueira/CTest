@@ -4,7 +4,7 @@
 #include <ctest/structure/queue.h>
 #include <stdio.h>
 
-// Initialize the suite using its default values.
+/* Initialize the suite using its default values. */
 void CTest_TestSuite_Init(struct CTest_TestSuite* testSuite) {
     testSuite->numberTests = 0;
     testSuite->numberFinishedTests = 0;
@@ -13,12 +13,12 @@ void CTest_TestSuite_Init(struct CTest_TestSuite* testSuite) {
     testSuite->errors = CTest_Queue_New();
 }
 
-// Run all the tests in the suite.
+/* Run all the tests in the suite. */
 void CTest_TestSuite_Run(struct CTest_TestSuite* testSuite) {
     unsigned int i = 0;
     struct CTest_FQueue* queue = testSuite->testsQueue;
     struct CTest_Test* test;
-    // Iterate through the queue of tests
+    /* Iterate through the queue of tests */
     for (; i < testSuite->numberTests; ++i) {
         test = CTest_Test_New();
         struct CTest_FunctionMap* map = CTest_FQueue_Pop(queue);
@@ -26,11 +26,11 @@ void CTest_TestSuite_Run(struct CTest_TestSuite* testSuite) {
         map->function(test);
         testSuite->numberFinishedTests += 1;
         if (test->status == FALSE) {
-            // Test has failed
+            /* Test has failed */
             testSuite->numberFailTests += 1;
             CTest_Queue_Add(testSuite->errors, (void*) test->result);
         }
     }
-    // Print results
+    /* Print results */
     testSuite->output(testSuite);
 }

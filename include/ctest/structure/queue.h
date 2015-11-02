@@ -9,17 +9,17 @@
 
 #include <ctest/types.h>
 
-// Foward declaration for the QueueNode, which is a private structure
+/* Foward declaration for the QueueNode, which is a private structure */
 struct CTest_QueueNode;
 
-// Foward declaration for the queue of functions
+/* Foward declaration for the queue of functions */
 struct CTest_FQueueNode;
 
 /**
  * Structure used to store all the nodes of the queue.
  */
 struct CTest_Queue {
-    struct CTest_QueueNode* top; ///< Next element that will be removed from the queue.
+    struct CTest_QueueNode* top; /** Next element that will be removed from the queue. */
 };
 
 /**

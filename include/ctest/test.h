@@ -12,10 +12,10 @@
 
 #include <ctest/types.h>
 
-// Stores the result of the test
+/* Stores the result of the test */
 struct CTest_TestResult {
-    const char* errMsg;      ///< Error message
-    const char* funcName;    ///< Name of the test function
+    const char* errMsg;      /** Error message */
+    const char* funcName;    /** Name of the test function */
 };
 
 
@@ -24,8 +24,8 @@ struct CTest_TestResult {
  * TestSuite, so it can check if the test has failed or succeced.
  */
 struct CTest_Test {
-    CTest_Boolean status;             ///< Test status: failed = FALSE, succeced = TRUE
-    struct CTest_TestResult* result; ///< Result of the test
+    CTest_Boolean status;             /** Test status: failed = FALSE, succeced = TRUE */
+    struct CTest_TestResult* result; /** Result of the test */
 };
 
 /**

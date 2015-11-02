@@ -2,7 +2,7 @@
 #
 
 LIB     = libctest.so
-CC      = gcc
+CC      = gcc -ansi
 SRCDIR  = src
 BINDIR  = build
 DISTDIR = dist

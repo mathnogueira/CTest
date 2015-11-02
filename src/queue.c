@@ -15,11 +15,11 @@ struct CTest_QueueNode {
  * and to store the next node after this one.
  */
 struct CTest_FQueueNode {
-    struct CTest_FunctionMap* content;       // Content of the node
-    struct CTest_FQueueNode* next;           // Next node
+    struct CTest_FunctionMap* content;       /* Content of the node */
+    struct CTest_FQueueNode* next;           /* Next node */
 };
 
-// Create a new queue.
+/* Create a new queue. */
 struct CTest_Queue* CTest_Queue_New() {
     struct CTest_Queue* queue = (struct CTest_Queue*) malloc(sizeof(struct CTest_Queue));
     queue->top = NULL;
@@ -45,7 +45,7 @@ void CTest_Queue_Add(struct CTest_Queue* queue, void* object) {
     }
 }
 
-// Add an object to the queue.
+/* Add an object to the queue. */
 void CTest_FQueue_Add(struct CTest_FQueue* queue, struct CTest_FunctionMap* object) {
     struct CTest_FQueueNode* node = (struct CTest_FQueueNode*) malloc(sizeof(struct CTest_FQueueNode));
     node->content = object;
@@ -59,7 +59,7 @@ void CTest_FQueue_Add(struct CTest_FQueue* queue, struct CTest_FunctionMap* obje
     }
 }
 
-// Pop an object from the queue
+/* Pop an object from the queue */
 struct CTest_FunctionMap* CTest_FQueue_Pop(struct CTest_FQueue* queue) {
     struct CTest_FQueueNode* top = queue->top;
     queue->top = top->next;

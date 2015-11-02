@@ -10,10 +10,10 @@
 #include <ctest/types.h>
 #include <ctest/structure/queue.h>
 
-// Foward declaration
+/* Foward declaration */
 struct CTest_TestSuite;
 
-// Pointer to output function
+/* Pointer to output function */
 typedef void (*CTest_OutputFn)(const struct CTest_TestSuite*);
 
 /**
@@ -22,12 +22,12 @@ typedef void (*CTest_OutputFn)(const struct CTest_TestSuite*);
  * asserted.
  */
 struct CTest_TestSuite {
-    unsigned int numberTests; ///< Number of tests to be asserted.
-    unsigned int numberFinishedTests; ///< Number of tests that ran.
-    unsigned int numberFailTests; ///< Number of tests that have fail.
-    struct CTest_FQueue* testsQueue; ///< Queue of tests to be asserted.
-    struct CTest_Queue* errors;     ///< Queue of results of tests that have failed.
-    CTest_OutputFn output;          ///< Pointer to the function that will print the output.
+    unsigned int numberTests; /** Number of tests to be asserted. */
+    unsigned int numberFinishedTests; /** Number of tests that ran. */
+    unsigned int numberFailTests; /** Number of tests that have fail. */
+    struct CTest_FQueue* testsQueue; /** Queue of tests to be asserted. */
+    struct CTest_Queue* errors;     /** Queue of results of tests that have failed. */
+    CTest_OutputFn output;          /** Pointer to the function that will print the output. */
 };
 
 /**

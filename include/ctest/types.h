@@ -6,7 +6,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-// Foward declaration
+/* Foward declaration */
 struct CTest_Test;
 
 /**
@@ -25,8 +25,8 @@ typedef void (*CTest_Function)(struct CTest_Test*);
  * detect where the problems are happening.
  */
 struct CTest_FunctionMap {
-    CTest_Function function;        ///< Pointer to the test function
-    const char* name;               ///< Name of the function
+    CTest_Function function;        /** Pointer to the test function */
+    const char* name;               /** Name of the function */
 };
 /** Value for the boolean TRUE */
 #define TRUE 1

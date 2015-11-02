@@ -13,14 +13,14 @@
 #include <ctest/test.h>
 #include <stdlib.h>
 
-// Version of the library
+/* Version of the library */
 #define VERSION "1.0.1"
 
 /**
  * List of modes available in the current version.
  */
 enum CTest_Mode {
-    TEXT,           ///< Prints the result on the terminal.
+    TEXT,           /** Prints the result on the terminal. */
 };
 
 /**
