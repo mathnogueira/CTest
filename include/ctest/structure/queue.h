@@ -60,14 +60,13 @@ struct CTest_FQueue* CTest_FQueue_New();
  * @param queue queue that will store the object.
  * @param object reference to the object.
  */
-void CTest_FQueue_Add(struct CTest_FQueue* queue, CTest_Function object);
+void CTest_FQueue_Add(struct CTest_FQueue* queue, struct CTest_FunctionMap* object);
 
 /**
  * Get the next object from the queue.
  * @param queue reference to the queue that will be popped.
  * @return reference to the object.
  */
-CTest_Function CTest_FQueue_Pop(struct CTest_FQueue* queue);
-
+struct CTest_FunctionMap* CTest_FQueue_Pop(struct CTest_FQueue* queue);
 
 #endif

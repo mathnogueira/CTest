@@ -21,13 +21,14 @@ void CTest_TestSuite_Run(struct CTest_TestSuite* testSuite) {
     // Iterate through the queue of tests
     for (; i < testSuite->numberTests; ++i) {
         test = CTest_Test_New();
-        CTest_Function function = CTest_FQueue_Pop(queue);
-        function(test);
+        struct CTest_FunctionMap* map = CTest_FQueue_Pop(queue);
+        test->result->funcName = map->name;
+        map->function(test);
         testSuite->numberFinishedTests += 1;
         if (test->status == FALSE) {
             // Test has failed
             testSuite->numberFailTests += 1;
-            CTest_Queue_Add(testSuite->errors, (void*) test->errMsg);
+            CTest_Queue_Add(testSuite->errors, (void*) test->result);
         }
     }
     // Print results

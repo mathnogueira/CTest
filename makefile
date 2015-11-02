@@ -1,7 +1,7 @@
 # Makefile used to compile the library as a shared object (.so)
 #
 
-LIB     = ctest.so
+LIB     = libctest.so
 CC      = gcc
 SRCDIR  = src
 BINDIR  = build

@@ -1,4 +1,5 @@
 #include <ctest/core.h>
+#include <ctest/test.h>
 #include <ctest/mode/textmode.h>
 #include <stdio.h>
 
@@ -10,8 +11,8 @@ void CTest_Output_Text(const struct CTest_TestSuite* suite) {
     if (suite->numberFailTests > 0) {
         unsigned int i = 0;
         for (; i < suite->numberFailTests; ++i) {
-            const char* error = (const char*) CTest_Queue_Pop(suite->errors);
-            printf(">> %s\n", error);
+            struct CTest_TestResult* result = (struct CTest_TestResult*) CTest_Queue_Pop(suite->errors);
+            printf(">> %s --> %s\n", result->funcName, result->errMsg);
         }
     }
 }

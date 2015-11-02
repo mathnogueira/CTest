@@ -14,7 +14,7 @@
 #include <stdlib.h>
 
 // Version of the library
-#define VERSION "1.0.0"
+#define VERSION "1.0.1"
 
 /**
  * List of modes available in the current version.
@@ -43,9 +43,10 @@ void CTest_SetMode(struct CTest_TestSuite* testSuite, enum CTest_Mode mode);
  * Add a test to the queue of tests that must be asserted at the beginning
  * of the execution of the application.
  *
- * @param function pointer to the test function.
  * @param suite reference to the TestSuite object.
+ * @param function pointer to the test function.
+ * @param fnName name of the function (optional).
  * @return void
  */
-void CTest_Add(CTest_Function function, struct CTest_TestSuite* suite);
+void CTest_Add(struct CTest_TestSuite* suite, CTest_Function function, const char* fnName);
 #endif

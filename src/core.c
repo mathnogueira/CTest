@@ -25,8 +25,11 @@ void CTest_SetMode(struct CTest_TestSuite* suite, enum CTest_Mode mode) {
 }
 
 // Add a new test to the suite queue.
-void CTest_Add(CTest_Function function, struct CTest_TestSuite* suite) {
+void CTest_Add(struct CTest_TestSuite* suite, CTest_Function function, const char* fnName) {
+    struct CTest_FunctionMap* fnMap = (struct CTest_FunctionMap*) malloc(sizeof(struct CTest_FunctionMap));
+    fnMap->function = function;
+    fnMap->name = fnName;
     struct CTest_FQueue* queue = suite->testsQueue;
-    CTest_FQueue_Add(queue, function);
+    CTest_FQueue_Add(queue, fnMap);
     suite->numberTests += 1;
 }

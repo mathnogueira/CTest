@@ -12,13 +12,20 @@
 
 #include <ctest/types.h>
 
+// Stores the result of the test
+struct CTest_TestResult {
+    const char* errMsg;      ///< Error message
+    const char* funcName;    ///< Name of the test function
+};
+
+
 /**
  * Structure used to carry information from the test function to the
  * TestSuite, so it can check if the test has failed or succeced.
  */
 struct CTest_Test {
-    CTest_Boolean status;   ///< Test status: failed = FALSE, succeced = TRUE
-    const char* errMsg;
+    CTest_Boolean status;             ///< Test status: failed = FALSE, succeced = TRUE
+    struct CTest_TestResult* result; ///< Result of the test
 };
 
 /**
@@ -32,7 +39,7 @@ struct CTest_Test* CTest_Test_New();
  * @param test reference to the CTest_Test object.
  * @param err message that will be shown to the user.
  */
-void CTest_Test_Fail(struct CTest_Test* test, const char* err);
+void CTest_Test_Fail(struct CTest_Test* test, const char* err); 
 
 /**
  * Indicate that the test has succeced.

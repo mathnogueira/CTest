@@ -19,8 +19,15 @@ typedef unsigned char CTest_Boolean;
  * Type used as an alias to a pointer to an unit test function.
  */
 typedef void (*CTest_Function)(struct CTest_Test*);
-//typedef CTest_Boolean (*CTest_Function)();
 
+/**
+ * Structure used to map each function to its name, to make it easier to
+ * detect where the problems are happening.
+ */
+struct CTest_FunctionMap {
+    CTest_Function function;        ///< Pointer to the test function
+    const char* name;               ///< Name of the function
+};
 /** Value for the boolean TRUE */
 #define TRUE 1
 
