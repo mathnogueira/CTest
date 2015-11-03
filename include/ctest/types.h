@@ -8,12 +8,16 @@
 
 /* Foward declaration */
 struct CTest_Test;
+struct CTest_TestSuite;
 
 /**
  * Type used by the test functions to say if the test has passed or not. It
  * is basically an emulation of the type boolean.
  */
 typedef unsigned char CTest_Boolean;
+
+/* Pointer to output function */
+typedef void (*CTest_OutputFn)(const struct CTest_TestSuite*);
 
 /**
  * Type used as an alias to a pointer to an unit test function.

@@ -21,7 +21,14 @@ void CTest_SetMode(struct CTest_TestSuite* suite, enum CTest_Mode mode) {
     switch(mode) {
         case TEXT:
             suite->output = CTest_Output_Text;
+            break;
+        default:
+            break;
     }
+}
+
+void CTest_SetExternalListener(struct CTest_TestSuite* suite, CTest_OutputFn function) {
+    suite->output = function;
 }
 
 /* Add a new test to the suite queue. */

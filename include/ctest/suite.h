@@ -13,9 +13,6 @@
 /* Foward declaration */
 struct CTest_TestSuite;
 
-/* Pointer to output function */
-typedef void (*CTest_OutputFn)(const struct CTest_TestSuite*);
-
 /**
  * Struct responsible for storing all the information about the tests, 
  * since the reference to the test functions and the result of every test
