@@ -1,5 +1,5 @@
 #CTest :: Unit Testing for C
-### v1.0.1
+### v1.0.2
 
 CTest is a tool to automatize unit tests in applications that are built in C. It is easy to setup and to use. All the steps to install and use are described bellow.
 
@@ -29,8 +29,15 @@ Let's call it as **test_main.c** and it is inside the directory **myapp/tests**.
 int main(int argc, const char* argv[]) {
     // Create a test suite
     struct CTest_TestSuite* suite = CTest_Init();
-    // Define the output mode (v1.0.0 only supports TEXT yet)
-    CTest_SetMode(suite, TEXT);
+    // Define the output mode.
+    // Since v1.0.2, CTest supports two modes
+    // TEXT: Prints the test results in the terminal
+    // EXTERNAL: Enable another function to receive the results and
+    // do something with it.
+    CTest_SetMode(suite, EXTERNAL);
+    // If you choose EXTERNAL, you must use the following statement to
+    // tell CTest what function will receive the results
+    CTest_SetExternalListener(suite, myExternalFunction);
     // Add a test to the suit.
     // myTest is a function that is inside myapp/tests/mytest.h
     // The third parameter is the name of the function (it will be printed in the output)
@@ -68,9 +75,9 @@ void myTest(struct CTest_Test* test) {
         CTest_Test_Success(test);
 }
 ```
-This test will output:
+This test will output in the TEXT mode:
 ```
-Test v1.0.1 -- Unit Test for C
+Test v1.0.2 -- Unit Test for C
 
 Number of tests: 1      Number of failed tests: 1
 >> myTest --> The meaning of life should be 42
